@@ -23,13 +23,48 @@ programa
 			
 		escolha (opcao) {
 			caso 1:
-			para (inteiro linha = 0; linha < 3; linha++) {
+			escreva ("\n===== RELATORIO DE ATIVOS =====\n")
+			para (inteiro linha = 0; linha < 3; linha++) 
+			{ 
+				escreva("ID: ", linha)
+					escreva(" | Nome: ", Ativos_TI[linha])
+					escreva(" | Quantidade atual: ", Estoque[linha][0])
+					escreva(" | Quantidade minima: ", Estoque[linha][1])
+					escreva("\n")
+				
 				se (Estoque[linha][0] < Estoque[linha][1]) {
 					escreva ("Equipamento ",linha," está abaixo do preco mínimo!\n")
 				}
 			}
 			pare
+			caso 2:
+			      inteiro id
+                    inteiro quantidade
+
+                    escreva("\n===== RECEBIMENTO DE EQUIPAMENTO =====\n")
+                    escreva("Digite o ID do equipamento (0 a 2): ")
+                    leia(id)
+
+                    se (id >= 0 e id <= 2)
+                    {
+                        escreva("Equipamento: ", Ativos_TI[id], "\n")
+                        escreva("Digite a quantidade recebida: ")
+                        leia(quantidade)
+
+                        Estoque[id][0] = Estoque[id][0] + quantidade
+
+                        escreva("\nRecebimento registrado com sucesso!\n")
+                        escreva("Novo estoque: ", Ativos_TI[id], ": ",
+                                Estoque[id][0], "\n")
+                                
 		}
+		  caso 3:
+		   escreva ("\nsistema encerrado.\n")
+		    pare
+		  caso contrario:
+		   escreva ("\nOpcao invalida!! Digite 1, 2 ou 3.\n")
+		   pare
 	}
 }
+	}
 }
