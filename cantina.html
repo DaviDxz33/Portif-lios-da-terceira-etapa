@@ -14,7 +14,7 @@
         let qtdItens = Number(prompt("Itens que serao pedidos"));
         let itens = []; //vetor vazio 
         let total = 0; //acumulador começa do 0
-        for (let i = 1; i <= 4; i++){
+        for (let i = 1; i <= qtdItens; i++){
          let codigo = Number(prompt("Qual o código do item?")) ;
           
          switch (codigo){
@@ -36,10 +36,29 @@ total += 7;
 break;
 default:
     let x = codigo;
-    console.log("Opção ${x} nao existe");
+    console.log(`Opção ${x} nao existe`);
 
          }
         }
+if (itens.length === 0){
+    console.log("Nenhum item válido. Pedido cancelado.");
+}
+else {
+    let desconto = 0;
+    if(total >= 20){
+        desconto = total * 0.10;
+    }
+    let totalPagar = total - desconto;
+    console.log(`
+===== RECIBO DA CANTINA =====
+Cliente: ${nomeCliente}
+Itens: ${itens.join(", ")}
+Total: R$ ${total.toFixed(2)}
+Desconto: R$ ${desconto.toFixed(2)}
+Total a pagar: R$ ${totalPagar.toFixed(2)}
+=============================
+`);
+}
 
 </script>
 </body>
