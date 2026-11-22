@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Caixa da Cantina</title>
+</head>
+<body>
+    <h1>Caixa da Cantina</h1>
+    <p>Abra o console (F12) para ver o recibo.</p>
+
+    <script>
+        // o programa de vocês começa aqui
+        let nomeCliente = prompt("Digite seu nome:");
+        let qtdItens = Number(prompt("Itens que serao pedidos"));
+        let itens = []; //vetor vazio 
+        let total = 0; //acumulador começa do 0
+        for (let i = 1; i <= 4; i++){
+         let codigo = Number(prompt("Qual o código do item?")) ;
+          
+         switch (codigo){
+         case 1:
+            itens.push("Salgado");
+            total += 6;
+            break;
+            case 2:
+                itens.push("Suco");
+                total += 5;
+break;
+case 3:
+    itens.push("Pao de queijo");
+    total += 4.5;
+    break;
+    case 4:
+itens.push("Bolo");
+total += 7;
+break;
+default:
+    let x = codigo;
+    console.log("Opção ${x} nao existe");
+
+         }
+        }
+
+</script>
+</body>
+</html> 
